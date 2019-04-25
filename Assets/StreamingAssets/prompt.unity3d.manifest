@@ -6,7 +6,7 @@ Hashes:
     Hash: 875568a1ec47e11cafdb874007cc6196
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 914338c634caf8939fdd2c2ea1679ec6
+    Hash: be3d02f453b616186862e91d89b6b1c9
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -20,6 +20,10 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 - Class: 114
+  Script: {fileID: 1741964061, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+- Class: 114
+  Script: {fileID: -2095666955, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+- Class: 114
   Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 - Class: 114
   Script: {fileID: -1200242548, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
@@ -27,10 +31,6 @@ ClassTypes:
   Script: {fileID: 1367256648, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 - Class: 114
   Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-- Class: 114
-  Script: {fileID: 1741964061, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-- Class: 114
-  Script: {fileID: -2095666955, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -45,5 +45,5 @@ Assets:
 - Assets/LuaFramework/Examples/Builds/Prompt/PromptItem.prefab
 - Assets/LuaFramework/Examples/Builds/Prompt/PromptPanel.prefab
 Dependencies:
-- D:/Demo/Lua/LuaFramework/LuaFramework_UGUI-master/Assets/StreamingAssets/prompt_asset.unity3d
-- D:/Demo/Lua/LuaFramework/LuaFramework_UGUI-master/Assets/StreamingAssets/shared_asset.unity3d
+- D:/Demo/Lua/LuaFrameworkDemo/Assets/StreamingAssets/prompt_asset.unity3d
+- D:/Demo/Lua/LuaFrameworkDemo/Assets/StreamingAssets/shared_asset.unity3d

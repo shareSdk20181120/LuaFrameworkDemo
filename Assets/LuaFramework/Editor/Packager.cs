@@ -9,7 +9,13 @@ using LuaFramework;
 
 public class Packager {
     public static string platform = string.Empty;
+    /// <summary>
+    /// 文件夹路径
+    /// </summary>
     static List<string> paths = new List<string>();
+    /// <summary>
+    /// 文件路径
+    /// </summary>
     static List<string> files = new List<string>();
     static List<AssetBundleBuild> maps = new List<AssetBundleBuild>();
 
@@ -66,6 +72,7 @@ public class Packager {
         AssetDatabase.Refresh();
 
         maps.Clear();
+        //将lua复制到指定资源路径下
         if (AppConst.LuaBundleMode) {
             HandleLuaBundle();
         } else {
@@ -76,7 +83,7 @@ public class Packager {
         }
         string resPath = "Assets/" + AppConst.AssetDir;
         BuildPipeline.BuildAssetBundles(resPath, maps.ToArray(), BuildAssetBundleOptions.None, target);
-        BuildFileIndex();
+        BuildFileIndex();//将资源路径下所有的文件相对路径和MD5存入files.txt中
 
         string streamDir = Application.dataPath + "/" + AppConst.LuaTempDir;
         if (Directory.Exists(streamDir)) Directory.Delete(streamDir, true);
@@ -84,7 +91,7 @@ public class Packager {
     }
 
     static void AddBuildMap(string bundleName, string pattern, string path) {
-        string[] files = Directory.GetFiles(path, pattern);
+        string[] files = Directory.GetFiles(path, pattern);//获取指定路径下，所有相同后缀名的文件
         if (files.Length == 0) return;
 
         for (int i = 0; i < files.Length; i++) {
@@ -160,7 +167,6 @@ public class Packager {
     static void HandleExampleBundle() {
         string resPath = AppDataPath + "/" + AppConst.AssetDir + "/";
         if (!Directory.Exists(resPath)) Directory.CreateDirectory(resPath);
-
         AddBuildMap("prompt" + AppConst.ExtName, "*.prefab", "Assets/LuaFramework/Examples/Builds/Prompt");
         AddBuildMap("message" + AppConst.ExtName, "*.prefab", "Assets/LuaFramework/Examples/Builds/Message");
         AddBuildMap("login" + AppConst.ExtName, "*.prefab", "Assets/LuaFramework/Examples/Builds/Login");
@@ -171,7 +177,7 @@ public class Packager {
     }
 
     /// <summary>
-    /// 处理Lua文件
+    /// 处理Lua文件--将LuaFramework文件夹下的lua文件复制一份到StreamingAssets下
     /// </summary>
     static void HandleLuaFile() {
         string resPath = AppDataPath + "/StreamingAssets/";
@@ -187,12 +193,12 @@ public class Packager {
         for (int i = 0; i < luaPaths.Length; i++) {
             paths.Clear(); files.Clear();
             string luaDataPath = luaPaths[i].ToLower();
-            Recursive(luaDataPath);
+            Recursive(luaDataPath);//获取所有文件的路径
             int n = 0;
             foreach (string f in files) {
                 if (f.EndsWith(".meta")) continue;
-                string newfile = f.Replace(luaDataPath, "");
-                string newpath = luaPath + newfile;
+                string newfile = f.Replace(luaDataPath, "");//剔除lua文件的根路径---》相对路径
+                string newpath = luaPath + newfile;//新路径==新的根路径+相对路径
                 string path = Path.GetDirectoryName(newpath);
                 if (!Directory.Exists(path)) Directory.CreateDirectory(path);
 
@@ -242,7 +248,7 @@ public class Packager {
     }
 
     /// <summary>
-    /// 遍历目录及其子目录
+    /// 遍历目录及其子目录  剔除.meta
     /// </summary>
     static void Recursive(string path) {
         string[] names = Directory.GetFiles(path);

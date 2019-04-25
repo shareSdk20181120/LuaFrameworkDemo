@@ -1,0 +1,49 @@
+
+初始化
+	AssetBundleManifest abManifest=	获取AssetBundleManifest类型 
+	string[] allAssetBundle=abManifest.GetAllAssetBundles();
+
+1、下载或加载AssetBundle
+	加载AssetBundle方式有四种
+		AssetBundle.LoadFromFile
+		AssetBundle.LoadFromMemory
+		WWW.LoadFromCacheOrDownload
+		UnityWebRequest
+	卸载AssetBundle
+		
+	加载的资源类型是AssetBundleManifest===直接new WWW(URL)  
+	否：获取并加载abName的所有依赖的包之后，再加载abName包
+	将加载过的资源包缓存到列表中（  Dictionary<string, AssetBundleInfo> loadedABDic），记得一个变量记录在资源包的引用次数，以便卸载时使用
+	
+2、从AssetBundle中加载某个资源
+	AssetBundleInfo abInfo;
+	AssetBundle ab=abInfo.assetBundle
+	
+	以下几种方式加载资源
+		ab.LoadAssetAsync
+		ab.LoadAsset
+		ab.LoadAllAssets;
+		ab.LoadAll;
+   UObject obj= ab.LoadAssetAsync(name,type)
+   加载完毕，执行回调
+   
+
+
+3、创建一个加载包abName请求
+	指出包类型	，资源名，回调
+		例如 
+			LoadABRequest quest = new LoadABRequest();
+			quest.type = typeof(T);
+			quest.assetNames = resNames;
+			quest.atcion = action;
+
+	判断加载请求列表中（Dictionary<string, List<LoadABRequest>> loadABReqDic），是否有abName请求
+		有：将quest加入请求列表   questList.Add(quest);
+		否：新建请求列表，从AssetBundleInfo中加载资源，如果
+4、根据包名abName,获取AssetBundle的路径
+	abName==资源包所在根文件名 返回abName，
+	从allAssetBundle中找到abName，返回
+	
+加载某个AssetBundle流程
+	4-->3-->2-->1
+	

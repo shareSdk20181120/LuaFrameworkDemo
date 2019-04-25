@@ -159,6 +159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224280659929782558}
   - component: {fileID: 222171590489357814}
+  - component: {fileID: 114570444858074808}
   m_Layer: 5
   m_Name: LoginPanel
   m_TagString: Untagged
@@ -314,6 +315,17 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114570444858074808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1927059906864060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75365fc4d2466714db4a6934c668f1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114574999868455086
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 3160973744
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: login.unity3d
+      Dependencies: {}
+    Info_1:
+      Name: message.unity3d
+      Dependencies: {}
+    Info_2:
+      Name: prompt.unity3d
+      Dependencies: {}
+    Info_3:
+      Name: shared.unity3d
+      Dependencies: {}

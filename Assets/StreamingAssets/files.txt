@@ -1,9 +1,9 @@
 login.unity3d|168929ba01a531b14401d54a6c31e97d
-login.unity3d.manifest|e6669a00f381c4537f6e56ee0bdedddc
+login.unity3d.manifest|fad20871ecf9704c7e8ac439c6e6c54e
 message.unity3d|e7bf65470dbc8612f049be7a1ba496dd
-message.unity3d.manifest|6db47c0e947b0aaee93dda915c9cad1a
+message.unity3d.manifest|55fb143584bb98393646f4a136c8e63d
 prompt.unity3d|76e5fabc42fac8096f9375deb833bf99
-prompt.unity3d.manifest|27f758d9044363a4b0b9c4559addd7f6
+prompt.unity3d.manifest|fff300bb8d32d2991c8e3f28869f87d2
 prompt_asset.unity3d|2618a8fdccc5dd3659f563ceca10b249
 prompt_asset.unity3d.manifest|42ef8c06697f2bfdcf232a7cf5800d39
 shared_asset.unity3d|c24786ae3b479edd24eca02a147db651
@@ -16,8 +16,9 @@ lua/eventlib.lua|5b6f6d67f568ad41f97c619d533b89d0
 lua/events.lua|94bd71b0a7df7b2193efa5a1bdf4bc37
 lua/list.lua|4d64938755c602f80b4c03d4bbaa3d29
 lua/ltn12.lua|5f0d3400869c871e35cda3ff7551209a
-lua/Main.lua|73ba6147f38bb516bdb864edf596d61c
+lua/Main.lua|c844b1677b2a6d73cbb5db5105258e04
 lua/mime.lua|2e001d487613c4ae82f79ac23b8c978f
+lua/mobdebug.lua|e168760a5b1999e70ea10451d16f3708
 lua/slot.lua|67f502892ab09833c6f810ea2a1a48d2
 lua/socket.lua|f62021b8c3d4b62d419fdb2054c86e31
 lua/tolua.lua|7c8f49a16be291323abdd2bce4e0ea72
